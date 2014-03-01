@@ -1,0 +1,94 @@
+SSD1
+Introduction to Information Systems
+This course introduces students to fundamental concepts 
+and skills of software development. Students learn how 
+software is written, what its fundamental building blocks 
+are, and how multiple pieces of software cooperate to make 
+the Web work. Students learn to create web pages in HTML 
+and applets in Java. 
+
+SSD2
+Introduction to Computer Systems
+This course introduces students to the fundamentals of 
+using and maintaining computer systems in an Internet 
+environment. The basic components and functions of the 
+computer and the network are introduced, along with tools 
+and procedures for their operation and maintenance. 
+
+SSD3
+Object-Oriented Programming and Design
+This course introduces students to problem solving by 
+means of object-oriented design and implementation. 
+Emphasis is on problem analysis and solution design, 
+documentation and implementation. Students use commercial 
+software libraries, and create software projects. 
+Programming assignments are carried out in Java. 
+
+SSD4
+User-Centered Design and Testing
+This course focuses on human-computer interaction teaching 
+basic skills in designing, creating, and evaluating user 
+interfaces. Students learn how to design usable, 
+human-friendly user interfaces using a rapid-prototyping 
+programming language. They also learn how to evaluate 
+interfaces empirically with two usability tools. Visual 
+Basic is used in programming assignments. 
+
+SSD5
+Data Structures and Algorithms
+This course focuses on understanding the dependence of 
+execution time, bandwidth and memory requirements on 
+the data structures and algorithms chosen. Students 
+learn to reason informally about algorithm and data 
+structure correctness and complexity. Primary emphasis 
+is given to intelligent selection of algorithms and 
+representations. Programming assignments use C++ and the 
+Standard Template Library. 
+
+SSD6
+System-Level Programming
+This course provides students with a programmer's view 
+of processors, memory, and operating systems. Students 
+learn explicitly about memory organization and hierarchies, 
+about context-switching and threads, and about the 
+transformations that a high-level program undergoes before 
+it is executed on actual hardware. These enable students 
+to eliminate obscure "bugs" and to measure and optimize 
+program performance. Programming assignments use the C 
+programming language. 
+
+SSD7
+Database Systems
+This course introduces students to database concepts 
+including database design. Relational data models are 
+emphasized. Students develop client-server applications 
+in Java and/or Visual Basic, using commercial database 
+management systems. Example applications include e-commerce 
+systems. 
+
+SSD8
+Networks and Distributed Computing
+This course focuses on principles and practices of 
+network-based computing. It begins with an overview of 
+networking technology in support of data and multimedia 
+communication. It continues with application-oriented 
+protocols and approaches to distributed object-oriented 
+programming using Java. 
+
+SSD9
+Software Specification, Testing, and Maintenance
+This course focuses on the principles of development of 
+software systems following software engineering practices. 
+Students work individually or in multi-person teams on 
+Internet-based software projects of significant scale, 
+acquiring experience in all phases of the software product 
+lifecycle. 
+
+SSD10
+Software Project Organization and Management
+This course focuses on the organizational and management 
+aspects of software projects. Students learn techniques of 
+project planning, scheduling, costing and organization, from 
+an iterative perspective, and examine and critique various kinds 
+of planning and management artifacts. A key emphasis is management 
+of client issues. 

@@ -1,0 +1,11 @@
+Author: Ilya Trofimov
+Group: 272(2)
+Date: 2 Feb 2013
+
+1. line 14: string* -> string*&
+2. line 14: int -> int&
+3. line 40: string new_word_list = *(new string[2 * capacity]) -> string* new_word_list = new string[2 * capacity]
+4. line 44: new_word_list -> new_word_list[index]
+5. line 47: delete word_list -> delete [] word_list
+6. line 48: *word_list -> word_list
+7. line 79: delete [] word_list
