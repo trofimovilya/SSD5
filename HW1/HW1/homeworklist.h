@@ -1,9 +1,9 @@
 /*
 * homeworklist.h
 *
-* This maintains a collection of homework assignments. 
+* This maintains a collection of homework assignments.
 * It allows assignments to be added to the collection, and
-* searched based on their due date. It can store up to 50 
+* searched based on their due date. It can store up to 50
 * assignments.
 *
 * Include your implementations of

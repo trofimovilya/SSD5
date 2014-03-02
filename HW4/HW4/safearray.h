@@ -14,8 +14,8 @@ public:
     SafeArray();
     SafeArray(size_t);
     virtual ~SafeArray(void);
-    virtual T& operator[] (size_t) throw(out_of_range);
-	virtual const T& operator[] (size_t) const throw(out_of_range);
+    virtual T &operator[] (size_t) throw(out_of_range);
+    virtual const T &operator[] (size_t) const throw(out_of_range);
 };
 
 // default constructor
@@ -35,7 +35,7 @@ SafeArray<T>::~SafeArray(void) {
 // overloaded [] operator
 
 template <class T>
-T& SafeArray<T>::operator[] (size_t index) throw (out_of_range) {
+T &SafeArray<T>::operator[] (size_t index) throw (out_of_range) {
 
     if (index < 0) {
         throw out_of_range("Index is below 0");
@@ -49,13 +49,9 @@ T& SafeArray<T>::operator[] (size_t index) throw (out_of_range) {
 }
 
 
-template <class T> 
-const T& SafeArray<T>::operator[] (size_t cap)  const throw(out_of_range)
-{
-	 return const_cast <SafeArray<T>&>(*this)[cap];
+template <class T>
+const T &SafeArray<T>::operator[] (size_t cap)  const throw(out_of_range) {
+    return const_cast <SafeArray<T>&>(*this)[cap];
 };
-
-
-
 
 #endif

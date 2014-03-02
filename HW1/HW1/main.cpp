@@ -38,6 +38,7 @@ int main (int argc, char *argv[]) {
     homeworklist hl;
 
     int choice = EMPTY;
+
     while (choice != QUIT) {
 
         display_menu();
@@ -45,38 +46,38 @@ int main (int argc, char *argv[]) {
 
         switch (choice) {
 
-            case ADD:
+        case ADD:
 
-                // read in the name, date assigned, and due date
-                cout << endl << "Homework name: ";
-                cin >> hw_name;
+            // read in the name, date assigned, and due date
+            cout << endl << "Homework name: ";
+            cin >> hw_name;
 
-                hw_asg_date = read_date("Date assigned: ");
-                hw_due_date = read_date("Date due: ");
+            hw_asg_date = read_date("Date assigned: ");
+            hw_due_date = read_date("Date due: ");
 
-                // create and store the homework object
-                new_asg = homework(hw_name, hw_asg_date, hw_due_date);
-                hl.add(new_asg);
-                break;
+            // create and store the homework object
+            new_asg = homework(hw_name, hw_asg_date, hw_due_date);
+            hl.add(new_asg);
+            break;
 
-            case LIST:
-                cout << hl << endl;
-                break;
+        case LIST:
+            cout << hl << endl;
+            break;
 
-            case DUE_AFTER:   // falls through
-            case DUE_BEFORE:  // falls through
-            case DUE_ON:
-                // Due after, before, and on are all
-                // handled by this case. Since there
-                display_due(hl, choice);
-                break;
+        case DUE_AFTER:   // falls through
+        case DUE_BEFORE:  // falls through
+        case DUE_ON:
+            // Due after, before, and on are all
+            // handled by this case. Since there
+            display_due(hl, choice);
+            break;
 
-            case QUIT:
-                break;
+        case QUIT:
+            break;
 
-            default:
-                choice = EMPTY;
-                break;
+        default:
+            choice = EMPTY;
+            break;
 
         } // end switch (choice)
 
@@ -112,12 +113,10 @@ void display_due(homeworklist hl, int choice) {
     if (DUE_AFTER == choice) {
         cout << endl << hl.dueafter (d);
 
-    }
-    else if (DUE_ON == choice) {
+    } else if (DUE_ON == choice) {
         cout << endl << hl.dueon (d);
 
-    }
-    else if (DUE_BEFORE == choice) {
+    } else if (DUE_BEFORE == choice) {
         cout << endl << hl.duebefore (d);
 
     }
@@ -147,7 +146,7 @@ date string_to_date (string date_string) {
     month = atoi(date_string.substr(0, posn).c_str());
 
     day = atoi(date_string.substr(posn + 1,
-                                    date_string.find_last_of("/", 0)).c_str());
+                                  date_string.find_last_of("/", 0)).c_str());
 
     posn = date_string.find_first_of("/", posn + 1) + 1;
     year = atoi(date_string.substr(posn, date_string.length()).c_str());

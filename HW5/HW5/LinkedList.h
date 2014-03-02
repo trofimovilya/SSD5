@@ -9,19 +9,23 @@ class EmptyListException : public logic_error {
 
 public:
     EmptyListException(const string& what_arg ) throw() :
-    logic_error ("Empty list exception: " + what_arg) {}}
-;
+        logic_error ("Empty list exception: " + what_arg) {}
+};
 
 template <class T>
 class Node {
 private:
     T data;
-    Node* next;
+    Node *next;
 
 public:
-    Node(T d, Node* n = NULL) : data(d), next(n) {}
-    T& getData() { return data;}
-    Node*& getNext() { return next;}
+    Node(T d, Node *n = NULL) : data(d), next(n) {}
+    T& getData() {
+        return data;
+    }
+    Node *&getNext() {
+        return next;
+    }
 
 };
 
@@ -30,8 +34,8 @@ class LinkedList {
 
 protected:
 
-    Node<T>* head;  // Beginning of list
-    Node<T>* tail;  // End of list
+    Node<T> *head;  // Beginning of list
+    Node<T> *tail;  // End of list
     int count;    // Number of nodes in list
 
 public:
@@ -45,12 +49,14 @@ public:
         if (head == NULL) {
             throw EmptyListException("front()");
         }
+
         return head->getData();
     }
     virtual T& back(void) {
         if (tail == NULL) {
             throw EmptyListException("back()");
         }
+
         return tail->getData();
     }
     virtual int size(void) {
@@ -71,9 +77,10 @@ public:
 // Copy constructor
 template <class T>
 LinkedList<T>::LinkedList(const LinkedList<T>& src) :
-count(0), head(NULL), tail(NULL) {
+    count(0), head(NULL), tail(NULL) {
 
-    Node<T>* current = src.head;
+    Node<T> *current = src.head;
+
     while (current != NULL) {
         this->push_back(current->getData());
         current = current->getNext();
@@ -94,14 +101,14 @@ LinkedList<T>::~LinkedList(void) {
 template <class T>
 void LinkedList<T>::push_front(T d) {
 
-    Node<T>* new_head = new Node<T>(d, head);
+    Node<T> *new_head = new Node<T>(d, head);
 
     if (this->empty()) {
         head = tail = new_head;
-    }
-    else {
+    } else {
         head = new_head;
     }
+
     count++;
 }
 
@@ -109,12 +116,11 @@ void LinkedList<T>::push_front(T d) {
 template <class T>
 void LinkedList<T>::push_back(T d) {
 
-    Node<T>* new_tail = new Node<T>(d, NULL);
+    Node<T> *new_tail = new Node<T>(d, NULL);
 
     if (this->empty()) {
         head = new_tail;
-    }
-    else {
+    } else {
         tail->getNext() = new_tail;
     }
 
@@ -130,13 +136,12 @@ void LinkedList<T>::pop_front(void) {
         throw EmptyListException("pop_front()");
     }
 
-    Node<T>* old_head = head;
+    Node<T> *old_head = head;
 
     if (this->size() == 1) {
         head = NULL;
         tail = NULL;
-    }
-    else {
+    } else {
         head = head->getNext();
     }
 
@@ -152,16 +157,16 @@ void LinkedList<T>::pop_back(void) {
         throw EmptyListException("pop_back()");
     }
 
-    Node<T>* old_tail = tail;
+    Node<T> *old_tail = tail;
 
     if (this->size() == 1) {
         head = NULL;
         tail = NULL;
-    }
-    else {
+    } else {
 
         // Traverse the list
-        Node<T>* current = head;
+        Node<T> *current = head;
+
         while (current->getNext() != tail) {
             current = current->getNext();
         }
@@ -182,11 +187,13 @@ void LinkedList<T>::dump(void) {
     cout << "(";
 
     if (head != NULL) {
-        Node<T>* current = head;
+        Node<T> *current = head;
+
         while (current->getNext() != NULL) {
             cout << current->getData() << ", ";
             current = current->getNext();
         }
+
         cout << current->getData();
     }
 

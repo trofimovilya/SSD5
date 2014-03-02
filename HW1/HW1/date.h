@@ -2,7 +2,7 @@
 * date.h
 *
 * This is a simple class that represents the date and allows dates
-* to be written to a stream and compared. 
+* to be written to a stream and compared.
 *
 * Include your implementations
 * of the member functions of this class in date.cpp.

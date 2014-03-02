@@ -16,9 +16,10 @@ T& EnhancedLinkedList<T>::find_first(const T& key) {
         if (current->getData() == key) {
             return current->getData();
         }
+
         current = current->getNext();
     }
-    
+
     throw ListItemNotFoundException("Not found");
 }
 
@@ -34,6 +35,7 @@ EnhancedLinkedList<T> EnhancedLinkedList<T>::find_all(const T& key) {
 
         current = current->getNext();
     }
+
     return findList;
 }
 
@@ -73,11 +75,10 @@ void EnhancedLinkedList<T>::remove_first(const T& key) {
 }
 
 template <class T>
-void EnhancedLinkedList<T>::remove_all(const T& key)
-{
+void EnhancedLinkedList<T>::remove_all(const T& key) {
     if (head != NULL) {
-        Node<T>* current = head;
-        Node<T>* previous = head;
+        Node<T> *current = head;
+        Node<T> *previous = head;
 
         while (current != tail) {
             if (current->getData() == key) {
