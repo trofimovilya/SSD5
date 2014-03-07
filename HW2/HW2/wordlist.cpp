@@ -11,7 +11,7 @@ using namespace std;
 
 const int INITIAL_LIST_CAPACITY = 10;
 
-void build_wordlist (string **word_list, int &capacity, string filename) { // 1 // 2
+void build_wordlist (string** word_list, int& capacity, string filename) { // 1 // 2
 
     ifstream words;
     string word;
@@ -38,7 +38,7 @@ void build_wordlist (string **word_list, int &capacity, string filename) { // 1 
         if (size > (capacity - 1)) {
 
             // Create another array that is twice as large as the word_list
-            string *new_word_list = new string[2 * capacity]; // 3
+            string* new_word_list = new string[2 * capacity]; // 3
 
             // Copy the words from the word_list into the new array
             for (int index = 0; index < capacity; index++) {
@@ -62,11 +62,11 @@ void build_wordlist (string **word_list, int &capacity, string filename) { // 1 
     words.close();
 }
 
-int main (int argc, char *argv[]) {
+int main (int argc, char* argv[]) {
 
     // An array of string objects to store our
     // word list.
-    string *word_list;
+    string* word_list;
     int capacity = 0;
 
     // Read the word list file
