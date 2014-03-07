@@ -1,9 +1,20 @@
-/*
-* @Author: Ilya Trofimov
-* @Date:   2014-03-02 20:07:16
-* @Last Modified by:   Ilya Trofimov
-* @Last Modified time: 2014-03-02 20:08:25
-*/
+// Author: Ilya Trofimov
+// Group: 272(2)
+// Date: 04 Mar 2014
 
-#include <iostream>
 
+#include "car.h"
+
+Car::Car(string plate) : plate(plate), timesMoved(0) { }
+
+string Car::getPlate() {
+    return plate;
+}
+
+unsigned Car::getTimesMoved() {
+    return timesMoved;
+}
+
+void Car::move() {
+    ++ timesMoved;
+}

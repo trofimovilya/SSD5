@@ -1,9 +1,27 @@
-/*
-* @Author: Ilya Trofimov
-* @Date:   2014-03-02 20:06:59
-* @Last Modified by:   Ilya Trofimov
-* @Last Modified time: 2014-03-02 20:08:29
-*/
+// Author: Ilya Trofimov
+// Group: 272(2)
+// Date: 04 Mar 2014
 
-#include <iostream>
+#ifndef CAR_H
+#define CAR_H
 
+#include <string>
+using namespace std;
+
+class Car;
+
+class Car {
+
+private:
+    string plate;
+    unsigned timesMoved;
+
+public:
+    Car(string plate);
+
+    string getPlate();
+    unsigned getTimesMoved();
+    void move();
+};
+
+#endif
