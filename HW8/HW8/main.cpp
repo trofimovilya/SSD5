@@ -22,11 +22,10 @@ int main (int argc, char *argv[]) {
         delete s;
     }
 
-    
-
     catch(exception& e) {
         cerr << e.what() << endl;
     }
+
     catch(...) {
         cerr << "Unknown exception caught!" << endl;
     }
