@@ -21,6 +21,9 @@ int main (int argc, char *argv[]) {
         s->simulate(file);
         delete s;
     }
+
+    
+
     catch(exception& e) {
         cerr << e.what() << endl;
     }
@@ -28,5 +31,7 @@ int main (int argc, char *argv[]) {
         cerr << "Unknown exception caught!" << endl;
     }
     
+    system("pause");
+
     return EXIT_FAILURE;
 }
