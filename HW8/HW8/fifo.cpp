@@ -2,7 +2,7 @@
 * @Author: Ilya Trofimov
 * @Date:   2014-03-30 04:57:42
 * @Last Modified by:   Ilya Trofimov
-* @Last Modified time: 2014-03-30 21:20:26
+* @Last Modified time: 2014-03-31 02:58:22
 */
 
 #include "fifo.h"
@@ -16,7 +16,7 @@ void fifo::simulate(string file) {
         cerr << "Nothing to print :(" << endl;
         return;
     }
-    
+
     ofstream fout;
     fout.open(generateFileName(file));
 
@@ -29,7 +29,7 @@ void fifo::simulate(string file) {
     int aggLatency = 0; // Aggregate latency
     int totalJobs = workload.size(); // Total arrived jobs
 
-    while (true) {
+    do {
         wasArrived = false;
 
         if (!workload.empty() && workload.front().arrival_time() == currentTime) {
@@ -53,28 +53,48 @@ void fifo::simulate(string file) {
             ++currentTime;
         }
 
-        if (workload.empty() & waiting.empty()) {
-            break;
-        }
-    }
+    } while (!workload.empty() | !waiting.empty());
 
     printStat(totalJobs, aggLatency, fout);
     printStat(totalJobs, aggLatency, clog);
-    
+
     fout.close();
 }
 
 void fifo::print(string action, const event& ev, int time, ostream& out) {
     out << "\t" << action << ": ";
-    out << ev.getjob().getnumpages() << " pages ";
-    out << "from " << ev.getjob().getuser();
-    out << " at " << time << " seconds" << endl;
+    out << ev.getjob().getnumpages() << " page";
+
+    if (ev.getjob().getnumpages() > 1) {
+        out << 's';
+    }
+
+    out << " from " << ev.getjob().getuser();
+    out << " at " << time << " second";
+
+    if (time > 1) {
+        out << 's';
+    }
+
+    out << endl;
 }
 
 void fifo::printStat(int totalJobs, int aggLatency, ostream& out) {
+    double mean = aggLatency / (double) totalJobs;
     out << endl << "\tTotal jobs: " << totalJobs << endl;
-    out << "\tAggregate latency: " << aggLatency << endl;
-    out << "\tMean latency: " << aggLatency / (double) totalJobs << endl;
+    out << "\tAggregate latency: " << aggLatency << " second";
+
+    if (aggLatency > 1) {
+        out << 's';
+    }
+
+    out << "\n\tMean latency: " << mean << " second";
+
+    if (mean >= 2) {
+        out << 's';
+    }
+
+    out << endl;
 }
 
 string fifo::generateFileName(const string& fileName) {
