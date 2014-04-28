@@ -1,6 +1,13 @@
-// Author: Ilya Trofimov
-// Group: 272(2)
-// Date: 28 Jan 2014
+/**
+ * @File:   date.cpp
+ * @Author: Ilya Trofimov
+ * @Email:  ilyatrofimov@outlook.com
+ * @Date:   2014-03-07 23:51:21
+ *
+ * @Last Modified by:   Ilya Trofimov
+ * @Last Modified time: 2014-04-25 05:26:17
+ */
+
 
 #include "date.h";
 #include <iomanip>
@@ -23,7 +30,7 @@ int date::compareTo(date another_date) {
     return day - another_date.day;
 }
 
-ostream &operator<< (ostream &stream, date d) {
+ostream& operator<< (ostream& stream, date d) {
     stream << setfill('0') << setw(2) << d.month << "/";
     stream << setfill('0') << setw(2) << d.day << "/";
     stream << setfill('0') << setw(4) << d.year;

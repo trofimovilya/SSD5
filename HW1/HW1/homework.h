@@ -1,3 +1,14 @@
+/**
+ * \file    homework.h
+ * \author  Ilya Trofimov
+ * \email   ilyatrofimov@outlook.com
+ * \date    2014-03-07 23:51:21
+ *
+ * \modifiedby   Ilya Trofimov
+ * \modifiedtime 2014-04-26 21:00:47
+ */
+
+
 /*
 * homework.h
 *
@@ -18,7 +29,7 @@
 
 class homework;
 
-ostream &operator<< (ostream &stream, homework h);
+ostream& operator<< (ostream& stream, homework h);
 
 class homework {
 
@@ -28,18 +39,18 @@ private:
     date due_date;
 
 public:
-    homework ();
-    homework (string name, date assigned_date, date due_date);
+    homework();
+    homework(string name, date assigned_date, date due_date);
 
     // This should follow the Java syntax -- we'll discuss overloading
     // oeprators soon enough. The comparison should be based ont he due
     // date.
-    int compareTo (homework another_homework);
+    int compareTo(homework another_homework);
 
     // The standard insertion operator.
     // It should output as follows:
     //      HW#1: 1/1/03 - 2/23/03
-    friend ostream &operator<< (ostream &stream, homework h);
+    friend ostream& operator<< (ostream& stream, homework h);
 
 };
 

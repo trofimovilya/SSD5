@@ -54,7 +54,7 @@ homeworklist homeworklist::dueon(date d) {
     return dueOnList;
 }
 
-ostream &operator<< (ostream &stream, homeworklist hl) {
+ostream& operator<< (ostream& stream, homeworklist hl) {
     for (int i = 0; i < hl.current_size; ++i) {
         stream << hl.list[i];
     }

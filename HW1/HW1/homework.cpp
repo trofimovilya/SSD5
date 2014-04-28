@@ -1,6 +1,13 @@
-// Author: Ilya Trofimov
-// Group: 272(2)
-// Date: 28 Jan 2014
+/**
+ * \file    homework.cpp
+ * \author  Ilya Trofimov
+ * \email   ilyatrofimov@outlook.com
+ * \date    2014-03-07 23:51:21
+ *
+ * \modifiedby:   Ilya Trofimov
+ * \modifiedtime: 2014-04-26 20:59:43
+ */
+
 
 #include "homework.h";
 
@@ -14,7 +21,7 @@ int homework::compareTo(homework another_homework) {
     return due_date.compareTo(another_homework.due_date);
 }
 
-ostream &operator<< (ostream &stream, homework h) {
+ostream& operator<< (ostream& stream, homework h) {
     stream << h.name << ": " << h.assigned_date << " - " << h.due_date;
     return stream;
 }
