@@ -1,3 +1,14 @@
+/**
+ * \file    main.cpp
+ * \author  Ilya Trofimov
+ * \email   ilyatrofimov@outlook.com
+ * \date    2014-04-22 09:54:13
+ *
+ * \modifiedby   Ilya Trofimov
+ * \modifiedtime 2014-04-28 22:24:37
+ */
+
+
 #include <iostream>
 #include <cstdlib>
 
