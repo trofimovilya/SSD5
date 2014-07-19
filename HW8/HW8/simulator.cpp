@@ -7,36 +7,36 @@ using namespace std;
 #include "event.h"
 
 simulator::simulator(int seconds_per_page) {
-  this->seconds_per_page = seconds_per_page;
+    this->seconds_per_page = seconds_per_page;
 }
 
 simulator::~simulator() {}
 
-void simulator::loadworkload (string file) {
-  ifstream in;
+void simulator::loadworkload(string file) {
+    ifstream in;
 
-  // Open workload file
-  in.open (file.c_str());
+    // Open workload file
+    in.open(file.c_str());
 
-  if (!in) {
-    cerr << "Couldn't open input file, workload empty" << endl;
-    return;
-  }
+    if (!in) {
+        cerr << "Couldn't open input file, workload empty" << endl;
+        return;
+    }
 
-  // Load workload into simulator
-  while (1) {
-    event e;
+    // Load workload into simulator
+    while (1) {
+        event e;
 
-    in >> e;
- 
-    if (in.eof()) 
-      break;
+        in >> e;
 
-    addevent (e);
-  }
+        if (in.eof()) {
+            break;
+        }
 
+        addevent(e);
+    }
 }
 
 void simulator::addevent(event e) {
-  workload.push(e);
+    workload.push(e);
 }

@@ -1,9 +1,13 @@
-/*
-* @Author: Ilya Trofimov
-* @Date:   2014-03-30 04:57:42
-* @Last Modified by:   Ilya Trofimov
-* @Last Modified time: 2014-03-31 02:58:22
-*/
+/**
+ * \file    fifo.cpp
+ * \author  Ilya Trofimov
+ * \email   ilyatrofimov@outlook.com
+ * \date    2014-04-02 00:08:50
+ *
+ * \modifiedby   Ilya Trofimov
+ * \modifiedtime 2014-06-18 08:40:43
+ */
+
 
 #include "fifo.h"
 
